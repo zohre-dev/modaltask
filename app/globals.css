@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+ 
+}
+
+
+
+
+
+@layer components{
+
+.modal{
+  @apply   fixed bg-red-100 transition-all duration-300 
+}
+
+
+
+/* Hidden modals */
+.modal-left{
+  @apply  -left-full
+}
+.modal-right{
+  @apply  -right-full
+}
+.modal-top{
+  @apply  -top-full
+}
+.modal-bottom{
+  @apply  -bottom-full
+}
+
+
+
+/* Active modals */
+.modal-left.active{
+  @apply left-1/2  -translate-x-1/2  top-1/2  -translate-y-1/2
+}
+
+.modal-right.active{
+  @apply right-1/2  translate-x-1/2  top-1/2  -translate-y-1/2
+}
+
+.modal-top.active{
+  @apply top-1/2  -translate-y-1/2  left-1/2  -translate-x-1/2
+}
+
+.modal-bottom.active{
+  @apply bottom-1/2  translate-y-1/2  left-1/2  -translate-x-1/2
+}
+
+
+
+
+
+}
